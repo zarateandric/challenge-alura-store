@@ -1,63 +1,114 @@
-# 🚀 Análisis de Tiendas "Alura Store"
+# 🚀 Análisis de Rendimiento de Tiendas "Alura Store"
 
-**Objetivo del Proyecto:** Analizar el rendimiento de 4 tiendas de la cadena "Alura Store" para identificar a la menos eficiente y presentar una recomendación de venta al Sr. Juan, basada 100% en datos.
+Este repositorio contiene el análisis de datos completo para el proyecto "Alura Store", cuyo objetivo es identificar a la tienda menos eficiente de una cadena de 4 sucursales para recomendar su venta.
 
-## 📊 Resumen del Análisis y Recomendación Final
+## 📜 Tabla de Contenidos
 
-Tras un análisis exhaustivo de 9,435 registros de ventas, se llegó a la siguiente conclusión:
+  * [1. El Desafío del Negocio](https://www.google.com/search?q=%231-el-desaf%C3%ADo-del-negocio)
+  * [2. Metodología de Análisis](https://www.google.com/search?q=%232-metodolog%C3%ADa-de-an%C3%A1lisis)
+      * [2.1. Carga y Unificación de Datos](https://www.google.com/search?q=%2321-carga-y-unificaci%C3%B3n-de-datos)
+      * [2.2. Análisis de KPIs (Vista Macro)](https://www.google.com/search?q=%2322-an%C3%A1lisis-de-kpis-vista-macro)
+      * [2.3. Análisis de Causa Raíz (Vista Micro)](https://www.google.com/search?q=%2323-an%C3%A1lisis-de-causa-ra%C3%ADz-vista-micro)
+      * [2.4. Análisis Geográfico (Desafío Extra)](https://www.google.com/search?q=%2324-an%C3%A1lisis-geogr%C3%A1fico-desaf%C3%ADo-extra)
+  * [3. Hallazgos Clave y Visualizaciones](https://www.google.com/search?q=%233-hallazgos-clave-y-visualizaciones)
+  * [4. Recomendación Final](https://www.google.com/search?q=%234-recomendaci%C3%B3n-final)
+  * [5. Estructura del Repositorio](https://www.google.com/search?q=%235-estructura-del-repositorio)
+  * [6. Cómo Replicar el Proyecto](https://www.google.com/search?q=%236-c%C3%B3mo-replicar-el-proyecto)
+  * [7. Tecnologías Utilizadas](https://www.google.com/search?q=%237-tecnolog%C3%ADas-utilizadas)
 
-**Recomendación: Se recomienda vender la Tienda 4.**
+-----
 
-**Justificación Clave:** Aunque todas las tiendas tienen un volumen de ventas (cantidad de pedidos) y una satisfacción de cliente (calificaciones) casi idénticos, la **Tienda 4** genera los **ingresos totales más bajos**.
+## 1\. El Desafío del Negocio
 
-El análisis profundo de productos reveló que esto se debe a un **"Ticket Promedio" bajo**: sus productos más vendidos (ej. "Cubertería", "Dashboards con Power BI") son de mucho menor valor que los de tiendas de alto rendimiento (ej. "TV LED UHD 4K" en la Tienda 1).
+El Sr. Juan, propietario de la cadena "Alura Store", necesita tomar una decisión estratégica: desea vender una de sus 4 tiendas para financiar un nuevo emprendimiento. El objetivo de este análisis es evaluar de manera integral el rendimiento de cada tienda (basado en ventas, reseñas, productos y logística) para identificar a la **"menos eficiente"** y así proporcionar una recomendación basada 100% en datos.
 
----
+-----
 
-## 📈 Visualizaciones Destacadas
+## 2\. Metodología de Análisis
 
-A continuación, se presentan los gráficos clave que respaldan la recomendación:
+El análisis completo se encuentra en el notebook `analisis_alura_store.ipynb`. El proceso se dividió en cuatro fases principales:
 
-### 1. Ingresos Totales por Tienda
-Este gráfico confirma que la Tienda 4 es la que menos ingresos genera del grupo.
+### 2.1. Carga y Unificación de Datos
 
-![Ingresos Totales por Tienda](<img width="915" height="553" alt="image" src="https://github.com/user-attachments/assets/9cd7a77f-3988-482f-99c0-ac9a199e3852" />)
+Los datos se recibieron en 4 archivos CSV separados, uno por cada tienda.
 
-### 2. Ingresos por Ciudad y Tienda (Análisis Geográfico)
-Este análisis de barras agrupadas muestra que la Tienda 4 (barra roja) tiene un rendimiento inferior en los dos mercados más importantes: **Bogotá y Medellín**.
+1.  Se cargó cada archivo en un DataFrame de Pandas.
+2.  Se creó una columna `Tienda` en cada DataFrame para etiquetar el origen de los datos.
+3.  Se unificaron los 4 DataFrames en un solo `df_master` usando `pd.concat()`.
+4.  Se realizó una validación con `.info()`, confirmando **0 valores nulos** y tipos de datos correctos.
 
-![Ingresos Totales por Ciudad y Tienda](<img width="1489" height="790" alt="image" src="https://github.com/user-attachments/assets/533035b1-7326-4f34-a9f6-102f762ad321" />
-)
+### 2.2. Análisis de KPIs (Vista Macro)
 
-### 3. Mix de Categorías de la Tienda 4
-Este gráfico circular muestra que el mix de categorías de la Tienda 4 es saludable y diversificado, similar al de otras tiendas. Esto confirma que el problema no es la categoría, sino el precio de los productos específicos.
+Para obtener una "vista de helicóptero", se agruparon los datos por `Tienda` y se calcularon 4 métricas clave usando `.agg()`:
 
-![Proporción de Ventas por Categoría - Tienda 4](<img width="858" height="661" alt="image" src="https://github.com/user-attachments/assets/677fb608-e72b-4e9d-8541-2e7305100c22" />
-)
+  * **Ingresos Totales:** La suma de la columna `Precio`.
+  * **Ventas Totales:** El conteo de transacciones (`Producto`).
+  * **Calificación Promedio:** La media de la columna `Calificación`.
+  * **Costo de Envío Promedio:** La media de la columna `Costo de envío`.
 
----
+### 2.3. Análisis de Causa Raíz (Vista Micro)
 
-## 🛠️ Metodología y Pasos del Proyecto
+El análisis macro reveló una paradoja: la **Tienda 4** tenía los **ingresos más bajos**, pero el **mismo volumen de ventas** y **excelentes calificaciones**. Para entender el *por qué*, se profundizó el análisis:
 
-El análisis completo se encuentra en el notebook `AluraStoreLatam-Challenge.ipynb` y siguió los siguientes pasos:
+  * **Análisis de Categorías:** Se usó `groupby(['Tienda', 'Categoría del Producto'])` para ver si la Tienda 4 vendía categorías diferentes.
+  * **Análisis de Productos:** Se usó `groupby(['Tienda', 'Producto'])` para encontrar los productos más y menos vendidos en cada tienda, revelando la causa raíz del problema.
 
-1.  **Carga y Unificación:** Se cargaron los 4 archivos CSV (uno por tienda) y se unificaron en un DataFrame maestro usando `pandas.concat()`.
-2.  **Validación de Datos:** Se utilizó `.info()` para verificar la ausencia de datos nulos y los tipos de datos correctos.
-3.  **Análisis Macro (KPIs):** Se usó `.groupby().agg()` para calcular las métricas principales por tienda:
-    * Ingresos Totales
-    * Ventas Totales (Volumen)
-    * Calificación Promedio
-    * Costo de Envío Promedio
-4.  **Análisis Micro (Causa Raíz):** Se usó `groupby()` por Categoría y Producto para encontrar el "por qué" del bajo rendimiento de la Tienda 4.
-5.  **Análisis Geográfico:** Se utilizó `.unstack()` para pivotar los datos y comparar el rendimiento por ciudad.
-6.  **Informe Final:** Se redactó una conclusión ejecutiva para el Sr. Juan.
+### 2.4. Análisis Geográfico (Desafío Extra)
 
----
+Finalmente, se exploró la dimensión espacial para ver si el rendimiento variaba por ciudad.
 
-## 💻 Tecnologías Utilizadas
+  * Se agruparon los ingresos usando `groupby(['Lugar de Compra', 'Tienda'])`.
+  * Se utilizó `.unstack()` para pivotar la tabla.
+  * Se generó un gráfico de barras agrupado para comparar el rendimiento de las 4 tiendas en cada ciudad clave.
 
-* **Python 3.12.12**
-* **Pandas:** Para la manipulación y análisis de datos.
-* **Matplotlib:** Para la generación de todas las visualizaciones.
-* **Google Colab:** Como entorno de desarrollo interactivo.
+-----
+
+## 3\. Hallazgos Clave y Visualizaciones
+
+El análisis arrojó 4 hallazgos principales que fundamentan la recomendación final:
+
+**Hallazgo 1: La Tienda 4 es la que menos ingresos genera.**
+El gráfico de barras de ingresos totales muestra que la Tienda 4 está significativamente por debajo de las demás en rentabilidad.
+![Ingresos Totales por Tienda](graficos/ingresos_totales_tienda)
+
+**Hallazgo 2: El problema NO es el volumen de ventas ni el servicio.**
+El análisis de KPIs (`resumen_tiendas`) demostró que todas las tiendas tienen un volumen de ventas casi idéntico (aprox. 2359 transacciones). Además, sus calificaciones promedio son virtualmente iguales (todas rondan 4.0 estrellas).
+
+**Hallazgo 3: La causa raíz es el "Ticket Promedio" (Mix de Productos).**
+Al comparar los productos más vendidos, se descubrió la razón:
+
+  * **Tienda 1 (Altos Ingresos):** Vende productos de alto valor como "TV LED UHD 4K" y "Secadora de ropa".
+  * **Tienda 4 (Bajos Ingresos):** Vende productos de bajo valor como "Cubertería" y "Dashboards con Power BI".
+
+**Hallazgo 4: La Tienda 4 falla en los mercados clave.**
+El análisis geográfico confirmó que la Tienda 4 (barra roja) tiene el peor rendimiento de ingresos en los dos mercados más importantes: **Bogotá y Medellín**.
+![Ingresos Totales por Ciudad y Tienda](graficos/ingresos_por_ciudad_tienda)
+-----
+
+## 4\. Recomendación Final
+
+Basado en la evidencia, se presentó el siguiente informe al Sr. Juan:
+
+> **Asunto: Recomendación de Venta de Tienda Alura Store**
+>
+> **Recomendación Final: Vender la Tienda 4.**
+>
+> **Justificación:**
+> La **Tienda 4** es la candidata ideal para la venta al ser la **menos eficiente desde el punto de vista financiero**.
+>
+> Aunque mantiene un volumen de ventas saludable y una operación logística eficiente (bajos costos de envío y buenas reseñas), su rentabilidad es la más baja del grupo.
+>
+> Este bajo rendimiento no se debe a una mala gestión o falta de clientes, sino a un **mix de productos enfocado en artículos de bajo precio**. Mientras que otras tiendas capitalizan sus ventas con productos de alto valor, la Tienda 4 no logra generar ingresos proporcionales a su volumen de operación.
+>
+> Vender la Tienda 4 representa la decisión con el **menor impacto negativo en la facturación total** de Alura Store y libera capital de la unidad de negocio que genera menos valor por transacción.
+
+-----
+
+
+## 5\. Tecnologías Utilizadas
+
+  * **Python 3.12.12+**
+  * **Pandas:** Para la carga, manipulación y análisis de datos.
+  * **Matplotlib:** Para la generación de todas las visualizaciones estáticas.
+  * **Google Colab:** Como entorno de desarrollo interactivo para el análisis.
 
