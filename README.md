@@ -4,17 +4,15 @@ Este repositorio contiene el análisis de datos completo para el proyecto "Alura
 
 ## 📜 Tabla de Contenidos
 
-  * [1. El Desafío del Negocio](https://www.google.com/search?q=%231-el-desaf%C3%ADo-del-negocio)
-  * [2. Metodología de Análisis](https://www.google.com/search?q=%232-metodolog%C3%ADa-de-an%C3%A1lisis)
-      * [2.1. Carga y Unificación de Datos](https://www.google.com/search?q=%2321-carga-y-unificaci%C3%B3n-de-datos)
-      * [2.2. Análisis de KPIs (Vista Macro)](https://www.google.com/search?q=%2322-an%C3%A1lisis-de-kpis-vista-macro)
-      * [2.3. Análisis de Causa Raíz (Vista Micro)](https://www.google.com/search?q=%2323-an%C3%A1lisis-de-causa-ra%C3%ADz-vista-micro)
-      * [2.4. Análisis Geográfico (Desafío Extra)](https://www.google.com/search?q=%2324-an%C3%A1lisis-geogr%C3%A1fico-desaf%C3%ADo-extra)
-  * [3. Hallazgos Clave y Visualizaciones](https://www.google.com/search?q=%233-hallazgos-clave-y-visualizaciones)
-  * [4. Recomendación Final](https://www.google.com/search?q=%234-recomendaci%C3%B3n-final)
-  * [5. Estructura del Repositorio](https://www.google.com/search?q=%235-estructura-del-repositorio)
-  * [6. Cómo Replicar el Proyecto](https://www.google.com/search?q=%236-c%C3%B3mo-replicar-el-proyecto)
-  * [7. Tecnologías Utilizadas](https://www.google.com/search?q=%237-tecnolog%C3%ADas-utilizadas)
+  * [1. El Desafío del Negocio]
+  * [2. Metodología de Análisis]
+      * [2.1. Carga y Unificación de Datos]
+      * [2.2. Análisis de KPIs (Vista Macro)]
+      * [2.3. Análisis de Causa Raíz (Vista Micro)]
+      * [2.4. Análisis Geográfico (Desafío Extra)]
+  * [3. Hallazgos Clave y Visualizaciones]
+  * [4. Recomendación Final]
+  * [5. Tecnologías Utilizadas]
 
 -----
 
