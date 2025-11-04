@@ -69,20 +69,25 @@ El análisis arrojó 4 hallazgos principales que fundamentan la recomendación f
 
 **Hallazgo 1: La Tienda 4 es la que menos ingresos genera.**
 El gráfico de barras de ingresos totales muestra que la Tienda 4 está significativamente por debajo de las demás en rentabilidad.
-![Ingresos Totales por Tienda](graficos/ingresos_totales_tienda)
+<img width="915" height="553" alt="ingresos_totales_tienda" src="https://github.com/user-attachments/assets/2421f621-e136-4c16-bacd-efe6a2ccb8fb" />
+
+
 
 **Hallazgo 2: El problema NO es el volumen de ventas ni el servicio.**
 El análisis de KPIs (`resumen_tiendas`) demostró que todas las tiendas tienen un volumen de ventas casi idéntico (aprox. 2359 transacciones). Además, sus calificaciones promedio son virtualmente iguales (todas rondan 4.0 estrellas).
 
 **Hallazgo 3: La causa raíz es el "Ticket Promedio" (Mix de Productos).**
 Al comparar los productos más vendidos, se descubrió la razón:
+<img width="858" height="661" alt="proporcion_ventas" src="https://github.com/user-attachments/assets/c3ee0e73-e85f-4d77-a99c-b9fa913c3241" />
+
 
   * **Tienda 1 (Altos Ingresos):** Vende productos de alto valor como "TV LED UHD 4K" y "Secadora de ropa".
   * **Tienda 4 (Bajos Ingresos):** Vende productos de bajo valor como "Cubertería" y "Dashboards con Power BI".
 
 **Hallazgo 4: La Tienda 4 falla en los mercados clave.**
-El análisis geográfico confirmó que la Tienda 4 (barra roja) tiene el peor rendimiento de ingresos en los dos mercados más importantes: **Bogotá y Medellín**.
-![Ingresos Totales por Ciudad y Tienda](graficos/ingresos_por_ciudad_tienda)
+El análisis geográfico confirmó que la Tienda 4 (barra roja) tiene el peor rendimiento de ingresos en los dos mercados más importantes: **Bogotá y Medellín**.<img width="1489" height="790" alt="ingresos_por_ciudad_tienda" src="https://github.com/user-attachments/assets/5fd9696a-62f0-443c-bb61-5950ac948382" />
+
+
 -----
 
 ## 4\. Recomendación Final
