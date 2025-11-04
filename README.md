@@ -4,15 +4,15 @@ Este repositorio contiene el análisis de datos completo para el proyecto "Alura
 
 ## 📜 Tabla de Contenidos
 
-  * [1. El Desafío del Negocio]
-  * [2. Metodología de Análisis]
-      * [2.1. Carga y Unificación de Datos]
-      * [2.2. Análisis de KPIs (Vista Macro)]
-      * [2.3. Análisis de Causa Raíz (Vista Micro)]
-      * [2.4. Análisis Geográfico (Desafío Extra)]
-  * [3. Hallazgos Clave y Visualizaciones]
-  * [4. Recomendación Final]
-  * [5. Tecnologías Utilizadas]
+  * 1. El Desafío del Negocio
+  * 2. Metodología de Análisis
+      * 2.1. Carga y Unificación de Datos
+      * 2.2. Análisis de KPIs (Vista Macro)
+      * 2.3. Análisis de Causa Raíz (Vista Micro)
+      * 2.4. Análisis Geográfico (Desafío Extra)
+  * 3. Hallazgos Clave y Visualizaciones
+  * 4. Recomendación Final
+  * 5. Tecnologías Utilizadas
 
 -----
 
@@ -24,7 +24,7 @@ El Sr. Juan, propietario de la cadena "Alura Store", necesita tomar una decisió
 
 ## 2\. Metodología de Análisis
 
-El análisis completo se encuentra en el notebook `analisis_alura_store.ipynb`. El proceso se dividió en cuatro fases principales:
+El análisis completo se encuentra en el notebook `AluraStoreLatam-Challenge.ipynb`. El proceso se dividió en cuatro fases principales:
 
 ### 2.1. Carga y Unificación de Datos
 
